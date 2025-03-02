@@ -1,6 +1,3 @@
-Here’s the updated `README.md` file based on the content of the uploaded file and the provided structure:
-
----
 
 # Restaurant Management System
 
