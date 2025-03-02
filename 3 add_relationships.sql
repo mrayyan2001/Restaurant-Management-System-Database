@@ -32,7 +32,7 @@ WHERE CONSTRAINT_NAME = 'FK_reservations_customer_id'
 ALTER TABLE reservations
 ADD CONSTRAINT FK_reservations_customer_id
 FOREIGN KEY (customer_id)
-REFERENCES customers(customer_id);
+REFERENCES customers(customer_id) ON DELETE CASCADE;
 
 IF NOT EXISTS (
     SELECT *
@@ -55,7 +55,7 @@ WHERE CONSTRAINT_NAME = 'FK_orders_customer_id'
 ALTER TABLE orders
 ADD CONSTRAINT FK_orders_customer_id
 FOREIGN KEY (customer_id)
-REFERENCES customers(customer_id);
+REFERENCES customers(customer_id) ON DELETE CASCADE;
 
 IF NOT EXISTS (
     SELECT *
@@ -87,7 +87,7 @@ WHERE CONSTRAINT_NAME = 'FK_order_items_order_id'
 ALTER TABLE order_items
 ADD CONSTRAINT FK_order_items_order_id
 FOREIGN KEY (order_id)
-REFERENCES orders(order_id);
+REFERENCES orders(order_id) ON DELETE CASCADE;
 
 IF NOT EXISTS (
     SELECT *

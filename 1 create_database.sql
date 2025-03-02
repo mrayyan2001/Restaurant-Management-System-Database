@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS restaurant_db;
 IF NOT EXISTS
 (
 SELECT [name]
