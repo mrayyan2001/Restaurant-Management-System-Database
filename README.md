@@ -1,57 +1,71 @@
+Here’s the updated `README.md` file based on the content of the uploaded file and the provided structure:
+
+---
+
 # Restaurant Management System
 
-# The scope of the project
+## The Scope of the Project
 
-A restaurant system that mange menu, orders, bills, reservation, customers, staff, roles, shifts and attendance.
+This project aims to develop a comprehensive **Restaurant Management System** that digitalizes restaurant operations. The system will streamline key functionalities such as managing menus, processing orders and bills, handling reservations, and overseeing staff roles, shifts, and attendance. Additionally, it will provide analytical insights into sales trends, staff productivity, and customer satisfaction.
 
-# The Mandatory object
+## The Mandatory Objects
 
-- Admin
-- Customer
-- Items
+- **Admin**: Manages the system, including menu items, categories, discounts, staff roles, shifts, and attendance.
+- **Customer**: Interacts with the system to view the menu, place orders, make reservations, and provide feedback.
+- **Menu Items**: Represents the food and beverage offerings of the restaurant, including details like name, category, price, availability, and optional discounts.
 
-# The Software Type and the functionality follow in the system
+## The Software Type and the Functionality Follow in the System
 
-## The Software Type
+### The Software Type
 
-The software is customized because the we have a specific requirements.
+The software is **customized** to meet specific requirements for a restaurant management system.
 
-## The functionality follow in the system
+### The Functionality Followed in the System
 
-### Admin
+#### Admin Functionalities
 
-- [ ] Manage menu items, categories, and discounts.
-- [ ] Oversee staff roles, shifts, and attendance.
-- [ ] Generate reports on sales, staff performance, and reservations.
+- Manage **menu items**, **categories**, and **discounts**.
+- Oversee **staff roles**, **shifts**, and **attendance**.
+- Generate reports on **sales**, **staff performance**, and **reservations**.
 
-### Customer
+#### Customer Functionalities
 
-- [ ] View the menu and place orders.
-- [ ] Make table reservations.
-- [ ] Provide feedback and rate their dining experience.
+- View the **menu** and place **orders**.
+- Make **table reservations**.
+- Provide **feedback** and rate their dining experience.
 
-# Summarize the Objects
+## Summarize the Objects
 
-- [x] Menu (items with name, category, price, availability, and optional discount)
-- [x] Order ( table number, customer name (optional), order date, status (e.g., pending, completed), and total amount)
-- [x] Reservation (customer name, contact details, number of guests, reservation date, and table number)
-- [ ] Staff (employee name, role (e.g., chef, server), shift timings, attendance, and contact details)
-- [x] Admin (username, password)
-- [x] Customer (name, contact details)
-- [x] categories (e.g., "Vegan" and "Appetizers")
+- **Menu**: Includes items with attributes like name, category, price, availability, and optional discounts.
+- **Order**: Captures details such as table number, customer name (optional), order date, status (e.g., pending, completed), and total amount.
+- **Reservation**: Stores customer name, contact details, number of guests, reservation date, and table number.
+- **Staff**: Tracks employee name, role (e.g., chef, server), shift timings, attendance, and contact details.
+- **Admin**: Manages the system with attributes like username and password.
+- **Customer**: Represents customers with attributes like name and contact details.
+- **Categories**: Classifies menu items into groups (e.g., "Vegan" and "Appetizers").
 
-## Shared Attributes
+### Shared Attributes Across Tables
 
-- id
-- created_at
-- updated_at
-- created_by
-- updated_by
-- is_active
+- `id`: Primary key for each table.
+- `created_at`: Timestamp indicating when the record was created.
+- `updated_at`: Timestamp indicating when the record was last updated.
+- `created_by`: ID of the user who created the record.
+- `updated_by`: ID of the user who last updated the record.
+- `is_active`: Boolean flag indicating whether the record is active.
 
-# Summarize the Objects Relationships
+## Summarize the Objects Relationships
 
-- [ ] Menu has one to many items
-- [ ] Menu items can belong to multiple categories
-- [ ] Orders may include multiple items with quantities
-- [ ] Reservations should prevent table overbooking
+- **Menu** has a one-to-many relationship with **Menu Items**.
+- **Menu Items** can belong to multiple **Categories** (many-to-many relationship).
+- **Orders** may include multiple **Menu Items** with quantities (many-to-many relationship).
+- **Reservations** should prevent table overbooking by enforcing unique constraints on `reservation_datetime` and `table_id`.
+
+## ERD (Entity Relationship Diagram)
+
+![alt text](ERD.png)
+
+## Relational Database Schema
+
+![alt text](<drawSQL-image-export-2025-03-01%20(1).png>)
+
+---
