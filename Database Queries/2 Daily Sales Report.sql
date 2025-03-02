@@ -2,7 +2,7 @@ USE restaurant_db;
 
 SELECT
     mi.category_id,
-    sum(total_amount) AS total_sales
+    sum(oi.item_price*oi.quantity) AS total_sales
 FROM orders o
     JOIN order_items oi ON o.order_id = oi.order_id
     JOIN menu_items mi ON mi.item_id = oi.menu_item_id
